@@ -2,25 +2,25 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+class App extends React.Component {
+//will fetch a user's Steam account data (consider using a rails API backend)
+  componentDidMount(){
+    fetch(``)
+    .then(res => res.json())
+    .then(userDataArray) => {
+      console.table(userDataArray)
+    })
+  }
+
+  render(){
+    return(
+      <>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Render Complete
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </>
+    )
+  }
 }
 
 export default App;
